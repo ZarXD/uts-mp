@@ -57,21 +57,25 @@ class _ListMenuState extends State<ListMenu> {
             padding: const EdgeInsets.all(20),
             child: Container(
               width: double.infinity,
-              height: 100,
+              height: 150,
               decoration: BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(image: AssetImage(Items[index]['gambar']), alignment: Alignment.centerLeft)
               ),
-              child: ListTile(
-                
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(Items[index]['deskripsi']),
-                    Text(Items[index]['rating'].toString()),
-                  ],
+              child: Positioned(
+                left: 50,
+                child: ListTile(
+                  
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(Items[index]['deskripsi']),
+                      Text(Items[index]['rating'].toString()),
+                    ],
+                  ),
+                  subtitle: Text("Rp"+Items[index]['harga'].toString()),
                 ),
-                subtitle: Text("Rp"+Items[index]['harga'].toString()),
               ),
             ),
           );
