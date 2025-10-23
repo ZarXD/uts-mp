@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         "/daftar": (context) => RegisterPage(),
         "/list_menu": (context) => ListMenu(),
       },
-      initialRoute: "/list_menu",
+      initialRoute: "/",
       // home: LoginPage(),
       //       title: 'Flutter Demo',
       //       theme: ThemeData(
