@@ -15,20 +15,50 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("gambar/Logo.png"))
+                    image: DecorationImage(
+                      image: AssetImage("gambar/Logo.png"),
+                    ),
                   ),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("LKS"),
-                    Text("MART")
+                    SizedBox(height: 8),
+                    Text(
+                      "LKS",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                    Text(
+                      "MART",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
                   ],
-                )
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                    "Sign In",
+                    style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             )
           ],
