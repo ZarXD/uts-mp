@@ -8,7 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _showpassword = true;
+  bool _showpassword = true;
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,12 +95,20 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 8),
                 TextField(
                   obscureText: _showpassword,
+                  controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    suffixIcon: Icon(Icons.remove_red_eye),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _showpassword = !_showpassword;
+                        });
+                      },
+                      icon: Icon(Icons.remove_red_eye),
+                    ),
                   ),
                 ),
                 Row(
@@ -142,7 +151,10 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pushNamed(context, "/daftar");
                   });
                 },
-                child: Text("di sini", style: TextStyle(color: Colors.blueGrey),),
+                child: Text(
+                  "di sini",
+                  style: TextStyle(color: Colors.blueGrey),
+                ),
               ),
             ],
           ),
