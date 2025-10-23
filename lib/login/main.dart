@@ -136,15 +136,13 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text("Belum punya akun? Daftar"),
               TextButton(
-                style: ButtonStyle(
-                  
-                ),
+                clipBehavior: Clip.hardEdge,
                 onPressed: () {
                   setState(() {
                     Navigator.pushNamed(context, "/daftar");
                   });
                 },
-                child: Text("di sini"),
+                child: Text("di sini", style: TextStyle(color: Colors.blueGrey),),
               ),
             ],
           ),
