@@ -71,6 +71,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            SizedBox(height: 30),
+            Text("Email"),
+            SizedBox(height: 8),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "email",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
           ],
         ),
       ),
