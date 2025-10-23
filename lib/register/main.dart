@@ -8,7 +8,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterState extends State<RegisterPage> {
-  final _showpassword = true;
+  bool _showpassword = true;
+  bool _showConfirmpassword = true;
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordConfirmController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,24 +113,49 @@ class _RegisterState extends State<RegisterPage> {
                 SizedBox(height: 8),
                 TextField(
                   obscureText: _showpassword,
+                  controller: _passwordController,
                   decoration: InputDecoration(
                     hintText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    suffixIcon: Icon(Icons.remove_red_eye),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _showpassword = !_showpassword;
+                        });
+                      },
+                      icon: Icon(
+                        _showpassword
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off,
+                      ),
+                    ),
                   ),
                 ),
+                SizedBox(height: 15),
                 Text("Konfirmasi Password*"),
                 SizedBox(height: 8),
                 TextField(
-                  obscureText: _showpassword,
+                  obscureText: _showConfirmpassword,
+                  controller: _passwordConfirmController,
                   decoration: InputDecoration(
                     hintText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    suffixIcon: Icon(Icons.remove_red_eye),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _showConfirmpassword = !_showConfirmpassword;
+                        });
+                      },
+                      icon: Icon(
+                        _showConfirmpassword
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -140,7 +168,9 @@ class _RegisterState extends State<RegisterPage> {
             child: FloatingActionButton.small(
               foregroundColor: Colors.white,
               backgroundColor: Colors.blueGrey,
-              onPressed: () {},
+              onPressed: () {
+                
+              },
               child: Text(
                 "Daftar",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200),
@@ -150,7 +180,20 @@ class _RegisterState extends State<RegisterPage> {
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("Sudah punya akun? Login ")],
+            children: [
+              Text("Sudah punya akun? Login"),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushNamed(context, "/");
+                  });
+                },
+                child: Text(
+                  "di sini",
+                  style: TextStyle(color: Colors.blueGrey),
+                ),
+              ),
+            ],
           ),
         ],
       ),

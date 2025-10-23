@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _showpassword = true;
+  bool _checkbox = true;
   final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -97,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: _showpassword,
                   controller: _passwordController,
                   decoration: InputDecoration(
-                    labelText: "Min. 8 characters",
+                    hintText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -107,16 +108,22 @@ class _LoginPageState extends State<LoginPage> {
                           _showpassword = !_showpassword;
                         });
                       },
-                      icon: Icon(Icons.remove_red_eye),
+                      icon: Icon(
+                        _showpassword
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off,
+                      ),
                     ),
                   ),
                 ),
                 Row(
                   children: [
                     Checkbox(
-                      value: true,
+                      value: _checkbox,
                       onChanged: (value) {
-                        setState(() {});
+                        setState(() {
+                          _checkbox = !_checkbox;
+                        });
                       },
                     ),
                     Text("Keep me logged in"),
@@ -145,7 +152,6 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text("Belum punya akun? Daftar"),
               TextButton(
-                clipBehavior: Clip.hardEdge,
                 onPressed: () {
                   setState(() {
                     Navigator.pushNamed(context, "/daftar");
