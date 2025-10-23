@@ -95,8 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextField(
                   obscureText: _showpassword,
                   decoration: InputDecoration(
-
-                    hintText: "Min. 8 characters",
+                    labelText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -131,16 +130,24 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Belum punya akun? Daftar "),
-              TextButton(onPressed: () {
-                
-              }, child: Text("hola"),)
+              Text("Belum punya akun? Daftar"),
+              TextButton(
+                style: ButtonStyle(
+                  
+                ),
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushNamed(context, "/daftar");
+                  });
+                },
+                child: Text("di sini"),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
