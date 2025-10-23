@@ -130,7 +130,20 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          Text("Belum punya akun? Daftar di sini"),
+          SizedBox(height: 10,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Belum punya akun? Daftar "),
+              Navigation
+              FloatingActionButton(
+                mini: true,
+
+                onPressed: () {
+                
+              },)
+            ],
+          )
         ],
       ),
     );
