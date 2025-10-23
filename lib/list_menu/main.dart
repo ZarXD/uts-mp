@@ -46,47 +46,99 @@ class _ListMenuState extends State<ListMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Column(
-          children: [
-            Container(
-              width: 200,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
+      body: ListView.builder(
+        itemCount: Items.length,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              Container(
+                width: 200,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.grey
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("gambar/Logo.png"),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "LKS MART",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ],
+              Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.grey
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text(Items[index]['deskripsi']),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          );
+        },
       ),
+
+      // body: Padding(
+      //   padding: const EdgeInsets.only(top: 20),
+      //   child: Column(
+      //     children: [
+      //       Container(
+      //         width: 200,
+      //         height: 60,
+      //         decoration: BoxDecoration(
+      //           color: Colors.grey,
+      //           borderRadius: BorderRadius.only(
+      //             topRight: Radius.circular(15),
+      //             bottomRight: Radius.circular(15),
+      //           ),
+      //         ),
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.center,
+      //           crossAxisAlignment: CrossAxisAlignment.center,
+      //           children: [
+      //             Container(
+      //               width: 50,
+      //               height: 50,
+      //               decoration: BoxDecoration(
+      //                 image: DecorationImage(
+      //                   image: AssetImage("gambar/Logo.png"),
+      //                 ),
+      //               ),
+      //             ),
+      //             Text(
+      //               "LKS MART",
+      //               style: TextStyle(
+      //                 fontSize: 24,
+      //                 fontWeight: FontWeight.bold,
+      //                 color: Colors.blueGrey,
+      //               ),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       ListView.builder(
+      //         itemBuilder: (context, index) {
+      //           return Column(
+      //             children: [
+      //               Container(
+      //                 width: double.infinity,
+      //                 height: 100,
+      //                 decoration: BoxDecoration(color: Colors.grey),
+      //                 child: Column(
+      //                   children: [
+      //                     ListTile(title: Text(Items[index]['deskripsi'])),
+      //                   ],
+      //                 ),
+      //               ),
+      //             ],
+      //           );
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+
+
       // body: ListView.builder(
       //   itemCount: Items.length,
       //   itemBuilder: (context, index) {
