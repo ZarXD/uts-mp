@@ -13,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        padding: EdgeInsets.all(10),
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
@@ -115,14 +116,17 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
-          FloatingActionButton(
-            foregroundColor: Colors.white,
-            backgroundColor: Colors.blueAccent,
-            onPressed: () {},
-            child: Text("Login"),
-          ),
+          // FloatingActionButton.small(
+          //   foregroundColor: Colors.white,
+          //   backgroundColor: Colors.blueAccent,
+          //   onPressed: () {},
+          //   child: Text("Login"),
+          // ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        
+      },),
     );
   }
 }
