@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterState extends State<RegisterPage> {
   final _showpassword = true;
   @override
   Widget build(BuildContext context) {
@@ -20,56 +20,50 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 120,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("gambar/Logo.png"),
+                Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("gambar/Logo.png"),
+                          ),
                         ),
                       ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 8),
-                        Text(
-                          "LKS",
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueGrey,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 8),
+                          Text(
+                            "LKS MART",
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueGrey,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "MART",
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
+
                 SizedBox(height: 15),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Sign In",
+                      "Daftar",
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "Enter your ID and Password to sign in!",
+                      "Silahkan isi Data Pribadi Anda",
                       style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w100,
@@ -79,11 +73,33 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 SizedBox(height: 30),
-                Text("Email"),
+                Text("Nama Lengkap"),
                 SizedBox(height: 8),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: "email",
+                    hintText: "Nama Lengkap",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Text("Alamat"),
+                SizedBox(height: 8),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Alamat",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Text("Username"),
+                SizedBox(height: 8),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Username",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -91,6 +107,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 15),
                 Text("Password*"),
+                SizedBox(height: 8),
+                TextField(
+                  obscureText: _showpassword,
+                  decoration: InputDecoration(
+                    hintText: "Min. 8 characters",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                  ),
+                ),
+                Text("Konfirmasi Password*"),
                 SizedBox(height: 8),
                 TextField(
                   obscureText: _showpassword,
@@ -130,14 +158,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Belum punya akun? Daftar "),
-              
-            ],
-          )
+            children: [Text("Belum punya akun? Daftar ")],
+          ),
         ],
       ),
     );
