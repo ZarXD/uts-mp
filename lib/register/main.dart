@@ -130,17 +130,6 @@ class _RegisterState extends State<RegisterPage> {
                     suffixIcon: Icon(Icons.remove_red_eye),
                   ),
                 ),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: true,
-                      onChanged: (value) {
-                        setState(() {});
-                      },
-                    ),
-                    Text("Keep me logged in"),
-                  ],
-                ),
               ],
             ),
           ),
@@ -153,7 +142,7 @@ class _RegisterState extends State<RegisterPage> {
               backgroundColor: Colors.blueGrey,
               onPressed: () {},
               child: Text(
-                "Login",
+                "Daftar",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200),
               ),
             ),
@@ -161,7 +150,7 @@ class _RegisterState extends State<RegisterPage> {
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("Belum punya akun? Daftar ")],
+            children: [Text("Sudah punya akun? Login ")],
           ),
         ],
       ),

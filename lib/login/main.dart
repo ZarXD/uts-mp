@@ -95,6 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextField(
                   obscureText: _showpassword,
                   decoration: InputDecoration(
+
                     hintText: "Min. 8 characters",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -135,7 +136,9 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Belum punya akun? Daftar "),
-              
+              TextButton(onPressed: () {
+                
+              }, child: Text("hola"),)
             ],
           )
         ],

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => LoginPage(),
         "/daftar": (context) => RegisterPage(),
       },
-      initialRoute: "/daftar",
+      initialRoute: "/",
       // home: LoginPage(),
       //       title: 'Flutter Demo',
       //       theme: ThemeData(
