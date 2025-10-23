@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blueAccent,
+                            color: Colors.blueGrey,
                           ),
                         ),
                         Text(
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blueAccent,
+                            color: Colors.blueGrey,
                           ),
                         ),
                       ],
@@ -116,17 +116,23 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
-          // FloatingActionButton.small(
-          //   foregroundColor: Colors.white,
-          //   backgroundColor: Colors.blueAccent,
-          //   onPressed: () {},
-          //   child: Text("Login"),
-          // ),
+          Container(
+            padding: EdgeInsets.only(left: 18, right: 18),
+            width: double.infinity,
+            height: 50,
+            child: FloatingActionButton.small(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blueGrey,
+              onPressed: () {},
+              child: Text(
+                "Login",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200),
+              ),
+            ),
+          ),
+          Text("Belum punya akun? Daftar di sini"),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        
-      },),
     );
   }
 }
