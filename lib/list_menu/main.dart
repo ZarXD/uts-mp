@@ -46,33 +46,34 @@ class _ListMenuState extends State<ListMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(actions: [
+          
+        ],
+      ),
       body: ListView.builder(
         itemCount: Items.length,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                width: 200,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.grey
-                ),
+          return Padding(
+            padding: const EdgeInsets.all(20),
+            child: Container(
+              width: double.infinity,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(15),
               ),
-              Container(
-                width: double.infinity,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.grey
-                ),
-                child: Column(
+              child: ListTile(
+                
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ListTile(
-                      title: Text(Items[index]['deskripsi']),
-                    )
+                    Text(Items[index]['deskripsi']),
+                    Text(Items[index]['rating'].toString()),
                   ],
                 ),
+                subtitle: Text("Rp"+Items[index]['harga'].toString()),
               ),
-            ],
+            ),
           );
         },
       ),
@@ -136,8 +137,6 @@ class _ListMenuState extends State<ListMenu> {
       //     ],
       //   ),
       // ),
-
-
 
       // body: ListView.builder(
       //   itemCount: Items.length,
