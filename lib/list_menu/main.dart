@@ -49,21 +49,27 @@ class _ListMenuState extends State<ListMenu> {
       body: ListView.builder(
         itemCount: Items.length,
         itemBuilder: (context, index) {
-          return Scaffold(
-            body: Container(
-              width: double.infinity,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.grey
+          return Column(
+            children: [
+              Container(
+                width: 200,
+                height: 100,
+              )
+              Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.grey
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text(Items[index]['deskripsi']),
+                    )
+                  ],
+                ),
               ),
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text(Items[index]['deskripsi']),
-                  )
-                ],
-              ),
-            ),
+            ],
           );
         },
       ),
