@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uts/list_menu/main.dart';
 import 'package:uts/login/main.dart';
 import 'package:uts/register/main.dart';
 
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         "/daftar": (context) => RegisterPage(),
+        "/list_menu": (context) => ListMenu(),
       },
-      initialRoute: "/",
+      initialRoute: "/list_menu",
       // home: LoginPage(),
       //       title: 'Flutter Demo',
       //       theme: ThemeData(
