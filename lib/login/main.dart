@@ -98,16 +98,28 @@ class _LoginPageState extends State<LoginPage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    suffixIcon: Icon(Icons.remove_red_eye)
+                    suffixIcon: Icon(Icons.remove_red_eye),
                   ),
                 ),
-                Checkbox(value: true, onChanged: (value) {
-                  setState(() {
-                    
-                  });
-                },)
+                Row(
+                  children: [
+                    Checkbox(
+                      value: true,
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                    ),
+                    Text("Keep me logged in"),
+                  ],
+                ),
               ],
             ),
+          ),
+          FloatingActionButton(
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.blueAccent,
+            onPressed: () {},
+            child: Text("Login"),
           ),
         ],
       ),
