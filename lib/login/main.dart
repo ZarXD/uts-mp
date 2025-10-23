@@ -11,15 +11,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 100,
-                  width: 100,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("gambar/Logo.png"),
@@ -50,17 +52,25 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            SizedBox(height: 15),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                    "Sign In",
-                    style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
+                  "Sign In",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Enter your ID and Password to sign in!",
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.black26,
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
