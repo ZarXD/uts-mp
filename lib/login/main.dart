@@ -135,13 +135,8 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Belum punya akun? Daftar "),
-              Navigation
-              FloatingActionButton(
-                mini: true,
+              
 
-                onPressed: () {
-                
-              },)
             ],
           )
         ],
